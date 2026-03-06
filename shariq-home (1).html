@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shariq Mohamed Yusuf — Writer · Editor · SEO Strategist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,300;1,8..60,400;1,8..60,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:      #110d2e;
+  --navy-mid:  #1c1645;
+  --navy-rich: #261e5a;
+  --white:     #ffffff;
+  --off:       #f7f5f2;
+  --ink:       #171717;
+  --ink-mid:   #3a3a3a;
+  --ink-light: #666;
+  --rule:      #e2deda;
+  --icon:      #1a1a1a;
+  --accent:    #2d1f6e;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--navy);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* ══════════════════════════════════
+   BACKGROUND — persistent navy/purple
+══════════════════════════════════ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 100% 70% at 90% 5%,  #3b2080 0%, transparent 50%),
+    radial-gradient(ellipse 60%  90% at 5%  95%, #1a0f50 0%, transparent 55%),
+    linear-gradient(160deg, #1b1242 0%, #0d0825 60%, #120e38 100%);
+  z-index: 0;
+}
+
+/* ══════════════════════════════════
+   HERO — full-width white card feel
+══════════════════════════════════ */
+.hero {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  padding: 56px 20px 0;
+}
+
+.hero-card {
+  background: var(--white);
+  width: 100%;
+  max-width: 720px;
+  padding: 52px 64px 44px;
+  text-align: center;
+  animation: riseIn 0.55s cubic-bezier(.22,.68,0,1.2) both;
+}
+
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+.hero-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 28px;
+}
+
+.hero-name-block { flex: 1; text-align: center; }
+
+.hero-name {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.hero-role {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--ink-mid);
+  margin-top: 8px;
+  letter-spacing: 0.02em;
+}
+
+.avatar-wrap {
+  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #dedad4;
+  background: #e8e3dc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 0.7rem;
+  font-family: sans-serif;
+}
+
+.rule { width: 32px; height: 2px; background: var(--ink); margin: 20px auto 22px; }
+
+/* social icons */
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.soc {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--icon);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  transition: background 0.18s, transform 0.18s;
+  flex-shrink: 0;
+}
+.soc:hover { background: #333; transform: translateY(-2px); }
+.soc--logo { background: transparent; overflow: hidden; }
+.soc--logo img { width: 40px; height: 40px; object-fit: cover; border-radius: 50%; display: block; }
+.soc--logo:hover { background: transparent; }
+
+/* hero intro text */
+.hero-body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--ink-mid);
+  max-width: 520px;
+  margin: 0 auto;
+}
+.hero-body + .hero-body { margin-top: 16px; }
+.hero-body strong { font-weight: 700; color: var(--ink); }
+.hero-body em { font-style: italic; }
+
+/* nav row at bottom of hero */
+.hero-nav {
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--ink-mid);
+}
+.hero-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--ink);
+  padding-bottom: 1px;
+  transition: opacity 0.15s;
+}
+.hero-nav a:hover { opacity: 0.5; }
+.hero-nav span { margin: 0 10px; color: #bbb; }
+
+/* ══════════════════════════════════
+   CONTENT SECTIONS — white panels
+   that "continue" the card downward
+══════════════════════════════════ */
+.sections {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 0;
+}
+
+/* each white panel directly beneath */
+.panel {
+  background: var(--white);
+  width: 100%;
+  max-width: 720px;
+  padding: 48px 64px;
+  animation: fadeUp 0.5s ease both;
+}
+
+/* stagger panels */
+.panel:nth-child(1) { animation-delay: 0.15s; }
+.panel:nth-child(2) { animation-delay: 0.25s; }
+.panel:nth-child(3) { animation-delay: 0.35s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* gap between panels — shows navy through */
+.gap {
+  width: 100%;
+  max-width: 720px;
+  height: 32px;
+  background: transparent;
+}
+
+/* section label */
+.sec-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sec-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+/* section title */
+.sec-title {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.sec-body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.975rem;
+  line-height: 1.8;
+  color: var(--ink-mid);
+}
+.sec-body strong { font-weight: 700; color: var(--ink); }
+.sec-body em { font-style: italic; }
+.sec-body + .sec-body { margin-top: 14px; }
+
+/* ── VOICE / PERSONALITY PANEL ── */
+.voice-pull {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.6;
+  border-left: 3px solid var(--ink);
+  padding-left: 20px;
+  margin: 24px 0;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--ink-mid);
+  border: 1.5px solid #d0ccc8;
+  padding: 5px 13px;
+  border-radius: 2px;
+}
+
+/* ── WORK LINKS ── */
+.work-links {
+  list-style: none;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.work-links li a {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1rem;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: #bbb;
+  line-height: 1.5;
+  transition: text-decoration-color 0.15s, color 0.15s;
+}
+.work-links li a:hover {
+  text-decoration-color: var(--ink);
+}
+
+/* ── WORK SAMPLES PANEL ── */
+.works-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.work-card {
+  border: 1.5px solid var(--rule);
+  padding: 20px 22px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: border-color 0.18s, transform 0.18s;
+  position: relative;
+}
+.work-card:hover {
+  border-color: var(--ink);
+  transform: translateY(-2px);
+}
+.work-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-bottom: 8px;
+}
+.work-title {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+.work-desc {
+  font-size: 0.82rem;
+  color: var(--ink-light);
+  line-height: 1.6;
+}
+.work-arrow {
+  position: absolute;
+  top: 18px; right: 18px;
+  font-size: 1rem;
+  color: var(--ink-light);
+  transition: transform 0.15s;
+}
+.work-card:hover .work-arrow { transform: translate(2px,-2px); }
+
+/* ── CTA PANEL ── */
+.cta-panel {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.cta-panel .sec-label { color: rgba(255,255,255,0.4); }
+.cta-panel .sec-label::after { background: rgba(255,255,255,0.1); }
+
+.cta-headline {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.cta-sub {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.75;
+  margin-bottom: 32px;
+  max-width: 460px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  background: var(--white);
+  color: var(--ink);
+  padding: 13px 28px;
+  text-decoration: none;
+  border: 2px solid var(--white);
+  transition: background 0.18s, color 0.18s;
+}
+.btn-primary:hover { background: transparent; color: var(--white); }
+
+.btn-secondary {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  background: transparent;
+  color: var(--white);
+  padding: 13px 28px;
+  text-decoration: none;
+  border: 2px solid rgba(255,255,255,0.3);
+  transition: border-color 0.18s;
+}
+.btn-secondary:hover { border-color: var(--white); }
+
+.cta-contact {
+  margin-top: 28px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45);
+}
+.cta-contact a { color: rgba(255,255,255,0.7); }
+
+/* ══════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════ */
+@media (max-width: 640px) {
+  .hero-card, .panel { padding: 36px 28px; }
+  .hero-name { font-size: 2rem; }
+  .avatar-wrap { width: 76px; height: 76px; }
+  .hero-top { gap: 16px; }
+  .works-grid { grid-template-columns: 1fr; }
+  .cta-headline { font-size: 1.6rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="sections">
+
+  <div class="gap"></div>
+
+  <!-- ── ABOUT / VOICE ── -->
+  <div class="panel" id="about">
+    <div class="sec-label">About</div>
+    <h2 class="sec-title">I write for readers first,<br>algorithms second.</h2>
+
+    <blockquote class="voice-pull">
+      Complex topics overwhelm readers. I break them down into content that informs, engages, and converts — in that order.
+    </blockquote>
+
+    <p class="sec-body">
+      I started writing as a job when SEO was still about keyword stuffing and link farms — so I've watched the whole discipline grow up. Today I work at the intersection of <strong>editorial rigour and search strategy</strong>: the idea that good writing and good ranking aren't in tension, they're the same goal.
+    </p>
+
+    <div class="tag-row">
+      <span class="tag">Content Strategy</span>
+      <span class="tag">SEO Writing</span>
+      <span class="tag">AI-Aided Editing</span>
+      <span class="tag">Digital Marketing</span>
+      <span class="tag">Long-form</span>
+      <span class="tag">Finance &amp; Law</span>
+      <span class="tag">Tech &amp; Culture</span>
+      <span class="tag">Storytelling</span>
+    </div>
+  </div>
+
+  <div class="gap"></div>
+
+  <!-- ── WORK SAMPLES ── -->
+  <div class="panel" id="work">
+    <div class="sec-label">Selected Work</div>
+    <h2 class="sec-title">Some of my work</h2>
+    <ul class="work-links">
+      <li><a href="https://medium.com/@shariqmohamedyusuf/oracles-king-versus-buffett-s-fortress-who-s-playing-3d-chess-with-your-money-dba1a915dff0" target="_blank">Oracle's King versus Buffett's Fortress: Who's Playing 3D Chess with Your Money?</a></li>
+      <li><a href="https://medium.com/@shariqmohamedyusuf/play-it-safe-place-a-bet-a-founders-guide-to-seo-vs-geo-d9e68657ec17" target="_blank">Play It Safe, Place a Bet: A Founder's Guide to SEO vs GEO</a></li>
+      <li><a href="https://medium.com/@shariqmohamedyusuf/understanding-and-overcoming-impostor-syndrome-581c26a94d6e" target="_blank">Understanding and Overcoming Impostor Syndrome</a></li>
+      <li><a href="https://medium.com/@shariqmohamedyusuf/the-most-important-skill-no-one-taught-you-in-the-age-of-ai-1932817209c4" target="_blank">The Most Important Skill No One Taught You in the Age of AI</a></li>
+    </ul>
+  </div>
+
+  <div class="gap"></div>
+
+  <!-- ── CTA ── -->
+  <div class="panel cta-panel" id="hire">
+    <div class="sec-label">Work Together</div>
+    <h2 class="cta-headline">Start with strategy.<br>Skip the costly rework.</h2>
+    <p class="cta-sub">
+      The audit takes 20 minutes. The clarity it gives you lasts the whole project. Whether you need a single article or a full content engine, let's talk before anyone writes a word.
+    </p>
+    <div class="cta-buttons">
+      <a class="btn-primary" href="https://wa.me/919895625980" target="_blank">Message on WhatsApp</a>
+      <a class="btn-secondary" href="/cdn-cgi/l/email-protection#94e7fcf5e6fde5baf9baedd4f3f9f5fdf8baf7fbf9">Send an email</a>
+    </div>
+    <p class="cta-contact">
+      Or browse first: <a href="#">Services</a> · <a href="#">Portfolio</a>
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
